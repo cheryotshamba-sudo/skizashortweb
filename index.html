@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dial Code</title>
+  <title>Skiza Chapaa Promo</title>
 
   <style>
     * {
@@ -13,62 +13,266 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #f5f7fb;
       font-family: Arial, sans-serif;
+      color: #111827;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 400px;
+      margin: auto;
+      padding: 25px 0 35px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin-top: 7px;
+      color: #6b7280;
+      font-size: 14px;
     }
 
     .card {
-      width: 90%;
-      max-width: 380px;
-      background: #ffffff;
-      padding: 35px 25px;
-      border-radius: 18px;
-      text-align: center;
+      background: white;
+      padding: 25px 20px;
+      border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
-    .code {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin: 20px 0 30px;
+    .offer {
+      text-align: center;
+      margin-bottom: 22px;
     }
 
-    .dial-btn {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      border: none;
-      border-radius: 10px;
+    .offer h1 {
+      font-size: 25px;
+      margin: 0 0 10px;
+    }
+
+    .offer p {
+      margin: 0;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      margin: 22px 0;
+      text-align: center;
+    }
+
+    .step {
+      width: 31%;
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      margin: 0 auto 7px;
+      border-radius: 50%;
       background: #16a34a;
       color: white;
-      font-size: 18px;
       font-weight: 700;
-      text-decoration: none;
+    }
+
+    .form-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .phone-input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 11px;
+      font-size: 17px;
+      outline: none;
+    }
+
+    .phone-input:focus {
+      border-color: #16a34a;
+    }
+
+    .continue-btn {
+      width: 100%;
+      margin-top: 14px;
+      padding: 16px;
+      border: none;
+      border-radius: 11px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    .dial-btn:active {
+    .continue-btn:active {
       transform: scale(0.98);
+    }
+
+    .notice {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .comments {
+      margin-top: 20px;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .comments h2 {
+      font-size: 18px;
+      margin: 0 0 15px;
+      text-align: center;
+    }
+
+    .comment {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .comment:last-child {
+      border-bottom: none;
+    }
+
+    .comment strong {
+      display: block;
+      margin-bottom: 3px;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="card">
+  <div class="container">
 
-    <div class="title">Dial Code</div>
+    <div class="header">
+      <div class="logo">🎵 Skiza Chapaa Promo</div>
+      <div class="subtitle">
+        Complete the steps to get started
+      </div>
+    </div>
 
-    <div class="code">*811*9372604#</div>
+    <div class="card">
 
-    <a class="dial-btn" href="tel:*811*9372604#">
-      📞 DIAL CODE
-    </a>
+      <div class="offer">
+        <h1>💰 Get Started Today</h1>
+
+        <p>
+          Enter your Safaricom number below to begin
+          the Skiza activation process.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          Enter Number
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          Activate Skiza
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          Upload Screenshot
+        </div>
+
+      </div>
+
+      <div class="form-title">
+        📱 Enter your Safaricom number
+      </div>
+
+      <input
+        id="phone"
+        class="phone-input"
+        type="tel"
+        inputmode="numeric"
+        maxlength="10"
+        placeholder="07XXXXXXXX"
+      >
+
+      <button
+        class="continue-btn"
+        onclick="continueProcess()"
+      >
+        CONTINUE
+      </button>
+
+      <div class="notice">
+        Enter the number you will use for the Skiza activation.
+      </div>
+
+    </div>
+
+    <!-- Replace these with your genuine previous comments -->
+    <div class="comments">
+
+      <h2>🎉 Recent Feedback</h2>
+
+      <div class="comment">
+        <strong>Sarah</strong>
+        Nimefanikiwa kukamilisha hatua, asante sana.
+      </div>
+
+      <div class="comment">
+        <strong>Kevin</strong>
+        Process ilikuwa rahisi sana.
+      </div>
+
+      <div class="comment">
+        <strong>Mary</strong>
+        Nimekamilisha usajili wangu.
+      </div>
+
+    </div>
 
   </div>
+
+  <script>
+    function continueProcess() {
+
+      const phone = document.getElementById("phone").value.trim();
+
+      if (!/^07\d{8}$/.test(phone)) {
+        alert("Tafadhali ingiza nambari sahihi ya Safaricom, mfano 0712345678.");
+        return;
+      }
+
+      // Save the number for the next page
+      localStorage.setItem("skizaPhone", phone);
+
+      // Go to the Dial/activation page
+      window.location.href = "dial.html";
+    }
+  </script>
 
 </body>
 </html>
