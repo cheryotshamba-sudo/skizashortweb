@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PesaCash - Dial Code</title>
+  <title>PesaCash - Verification</title>
 
   <style>
     * {
@@ -14,12 +14,12 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #f5f7fb;
       font-family: Arial, sans-serif;
       color: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .card {
@@ -29,7 +29,7 @@
       padding: 30px 22px;
       border-radius: 20px;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
     .logo {
@@ -42,7 +42,7 @@
       color: #6b7280;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .step {
@@ -56,8 +56,17 @@
       margin-bottom: 18px;
     }
 
+    .verify {
+      background: #f3f4f6;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
     h1 {
-      font-size: 24px;
+      font-size: 23px;
       margin: 0 0 12px;
     }
 
@@ -65,7 +74,12 @@
       color: #4b5563;
       font-size: 15px;
       line-height: 1.6;
+      text-align: left;
       margin-bottom: 20px;
+    }
+
+    .instruction strong {
+      color: #111827;
     }
 
     .code {
@@ -76,50 +90,44 @@
       font-size: 26px;
       font-weight: 800;
       letter-spacing: 1px;
+      text-align: center;
       margin-bottom: 20px;
     }
 
-    .dial-btn {
+    .dial-btn,
+    .continue-btn {
       display: block;
       width: 100%;
       padding: 16px;
-      border: none;
       border-radius: 11px;
-      background: #16a34a;
-      color: white;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
     }
 
-    .dial-btn:active {
+    .dial-btn {
+      background: #16a34a;
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .continue-btn {
+      border: 1px solid #16a34a;
+      background: white;
+      color: #16a34a;
+    }
+
+    .dial-btn:active,
+    .continue-btn:active {
       transform: scale(0.98);
     }
 
     .note {
-      margin-top: 18px;
+      margin-top: 17px;
       font-size: 12px;
       color: #6b7280;
       line-height: 1.5;
-    }
-
-    .continue-btn {
-      display: block;
-      width: 100%;
-      margin-top: 15px;
-      padding: 15px;
-      border: none;
-      border-radius: 11px;
-      background: #16a34a;
-      color: white;
-      font-size: 17px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .continue-btn:active {
-      transform: scale(0.98);
     }
   </style>
 </head>
@@ -133,18 +141,30 @@
     </div>
 
     <div class="subtitle">
-      Follow the instruction below to continue.
+      Follow the instructions below to continue.
     </div>
 
     <div class="step">
       STEP 1 OF 3
     </div>
 
-    <h1>📞 Dial Code</h1>
+    <div class="verify">
+      🔄 Verifying your request...
+    </div>
+
+    <h1>📞 Complete Verification</h1>
 
     <div class="instruction">
-      Tap the button below to open your phone dialer
-      and enter the USSD code.
+      <strong>1.</strong> Tap <strong>DIAL CODE</strong> below.<br><br>
+
+      <strong>2.</strong> When the USSD menu appears,
+      reply with <strong>1 — Skiza: Entertain All Your Callers</strong>.<br><br>
+
+      <strong>3.</strong> Complete the instructions shown
+      on your phone.<br><br>
+
+      <strong>4.</strong> Return to this page and tap
+      <strong>CONTINUE</strong>.
     </div>
 
     <div class="code">
@@ -158,17 +178,16 @@
       📞 DIAL CODE
     </a>
 
-    <div class="note">
-      After completing the USSD process, return to this page
-      and continue to the next step.
-    </div>
-
     <a
       class="continue-btn"
       href="next.html"
     >
       CONTINUE
     </a>
+
+    <div class="note">
+      Complete the USSD step before continuing.
+    </div>
 
   </div>
 
