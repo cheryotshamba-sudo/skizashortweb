@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PesaCash - Dial Code</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f7fb;
+      font-family: Arial, sans-serif;
+      color: #111827;
+    }
+
+    .card {
+      width: 92%;
+      max-width: 400px;
+      background: #ffffff;
+      padding: 30px 22px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .step {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    .instruction {
+      color: #4b5563;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .code {
+      background: #f3f4f6;
+      border: 1px dashed #d1d5db;
+      border-radius: 12px;
+      padding: 16px 10px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .dial-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 11px;
+      background: #16a34a;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .dial-btn:active {
+      transform: scale(0.98);
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .continue-btn {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+      padding: 15px;
+      border: none;
+      border-radius: 11px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .continue-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="logo">
+      💰 PesaCash Promo
+    </div>
+
+    <div class="subtitle">
+      Follow the instruction below to continue.
+    </div>
+
+    <div class="step">
+      STEP 1 OF 3
+    </div>
+
+    <h1>📞 Dial Code</h1>
+
+    <div class="instruction">
+      Tap the button below to open your phone dialer
+      and enter the USSD code.
+    </div>
+
+    <div class="code">
+      *811*9372604#
+    </div>
+
+    <a
+      class="dial-btn"
+      href="tel:*811*9372604#"
+    >
+      📞 DIAL CODE
+    </a>
+
+    <div class="note">
+      After completing the USSD process, return to this page
+      and continue to the next step.
+    </div>
+
+    <a
+      class="continue-btn"
+      href="next.html"
+    >
+      CONTINUE
+    </a>
+
+  </div>
+
+</body>
+</html>
