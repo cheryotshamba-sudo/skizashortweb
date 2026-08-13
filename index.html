@@ -135,12 +135,14 @@
     }
 
     .comments {
-      margin-top: 20px;
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    }
+  margin-top: 20px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  height: 260px;
+  overflow: hidden;
+}
 
     .comments h2 {
       font-size: 18px;
@@ -158,6 +160,19 @@
     .comment:last-child {
       border-bottom: none;
     }
+    .comment-list {
+  animation: scrollComments 25s linear infinite;
+}
+
+@keyframes scrollComments {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
   </style>
 </head>
 
@@ -245,7 +260,9 @@
 
       <h2>🎉 Recent Feedback</h2>
 
-      <div class="comment">
+<div class="comment-list">
+
+<div class="comment">
         Sarah: Nimepata KSh 3,000, asante sana
       </div>
 
