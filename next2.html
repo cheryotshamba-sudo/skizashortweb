@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   
+  <title>Skiza - Upload Screenshot</title>
 
   <style>
     * {
@@ -14,28 +14,22 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(0, 200, 83, 0.14), transparent 35%),
-        linear-gradient(180deg, #06110b 0%, #07150d 55%, #020804 100%);
+      background: #111827;
       font-family: Arial, sans-serif;
       color: #ffffff;
       padding: 20px 15px 35px;
     }
 
-    /* MAIN CARD */
-
     .card {
       width: 100%;
       max-width: 410px;
       margin: 10px auto;
-      background: rgba(13, 27, 20, 0.96);
+      background: #0b1220;
       padding: 30px 20px 25px;
       border-radius: 24px;
       text-align: center;
-      border: 1px solid rgba(57, 255, 136, 0.18);
-      box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.45),
-        0 0 25px rgba(0, 200, 83, 0.06);
+      border: 1px solid rgba(22, 196, 91, 0.12);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.40);
       position: relative;
       overflow: hidden;
     }
@@ -47,66 +41,39 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(
-        90deg,
-        #00c853,
-        #39ff88,
-        #00c853
-      );
+      background: #16c45b;
     }
-
-    /* LOGO */
 
     .logo {
-      font-size: 28px;
-      font-weight: 900;
-      color: #39ff88;
-      margin-bottom: 7px;
-      text-shadow: 0 0 15px rgba(57, 255, 136, 0.25);
-    }
-
-    .logo::after {
-      content: "Skiza";
+      display: none;
     }
 
     .subtitle {
-      color: #a7b8ae;
+      color: #d1d5db;
       font-size: 14px;
       line-height: 1.5;
       margin-bottom: 19px;
     }
 
-    /* STEP */
-
     .step {
       display: inline-block;
-      background: rgba(0, 200, 83, 0.12);
-      color: #39ff88;
+      background: rgba(22, 196, 91, 0.12);
+      color: #16c45b;
       padding: 8px 15px;
       border-radius: 30px;
       font-size: 13px;
       font-weight: 800;
       margin-bottom: 20px;
-      border: 1px solid rgba(57, 255, 136, 0.25);
+      border: 1px solid rgba(22, 196, 91, 0.25);
     }
-
-    /* HEADING */
-
-    h1 {
-      font-size: 25px;
-      margin: 0 0 18px;
-      color: #ffffff;
-    }
-
-    /* INSTRUCTIONS */
 
     .instruction {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(57, 255, 136, 0.13);
+      background: #020711;
+      border: 1px solid #1f2937;
       border-radius: 17px;
       padding: 19px 17px;
       text-align: left;
-      color: #c4d1c9;
+      color: #d1d5db;
       font-size: 14px;
       line-height: 1.6;
       margin-bottom: 20px;
@@ -116,18 +83,11 @@
       color: #ffffff;
     }
 
-    /* UPLOAD AREA */
-
     .upload-box {
-      border: 2px dashed rgba(57, 255, 136, 0.55);
+      border: 2px dashed rgba(22, 196, 91, 0.55);
       border-radius: 18px;
       padding: 25px 16px;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0, 200, 83, 0.09),
-          rgba(255, 255, 255, 0.015)
-        );
+      background: #020711;
     }
 
     .upload-icon {
@@ -135,13 +95,12 @@
       height: 68px;
       margin: 0 auto 12px;
       border-radius: 50%;
-      background: rgba(0, 200, 83, 0.14);
-      border: 1px solid rgba(57, 255, 136, 0.25);
+      background: rgba(22, 196, 91, 0.12);
+      border: 1px solid rgba(22, 196, 91, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 34px;
-      box-shadow: 0 0 20px rgba(0, 200, 83, 0.08);
     }
 
     .upload-text {
@@ -151,19 +110,15 @@
       margin-bottom: 12px;
     }
 
-    /* FILE INPUT */
-
     input[type="file"] {
       width: 100%;
       padding: 11px;
-      border: 1px solid rgba(57, 255, 136, 0.20);
+      border: 1px solid #374151;
       border-radius: 10px;
-      background: #09140e;
-      color: #c4d1c9;
+      background: #ffffff;
+      color: #111827;
       font-size: 13px;
     }
-
-    /* UPLOAD BUTTON */
 
     .upload-btn {
       display: block;
@@ -171,27 +126,17 @@
       padding: 16px;
       border: none;
       border-radius: 12px;
-      background: linear-gradient(
-        135deg,
-        #00c853,
-        #00a844
-      );
+      background: #2563eb;
       color: #ffffff;
       font-size: 17px;
       font-weight: 800;
       cursor: pointer;
       margin-top: 16px;
-      box-shadow:
-        0 7px 20px rgba(0, 200, 83, 0.25),
-        0 0 15px rgba(57, 255, 136, 0.08);
+      box-shadow: 0 7px 20px rgba(37, 99, 235, 0.25);
     }
 
     .upload-btn:hover {
-      background: linear-gradient(
-        135deg,
-        #12df68,
-        #00b94d
-      );
+      background: #1d4ed8;
     }
 
     .upload-btn:active {
@@ -204,226 +149,38 @@
       box-shadow: none;
     }
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: #111827;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    padding: 20px 15px 35px;
-  }
-
-  /* MAIN CARD */
-
-  .card {
-    width: 100%;
-    max-width: 410px;
-    margin: 10px auto;
-    background: #0b1220;
-    padding: 30px 20px 25px;
-    border-radius: 24px;
-    text-align: center;
-    border: 1px solid rgba(22, 196, 91, 0.12);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.40);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: #16c45b;
-  }
-
-  /* LOGO */
-
-  .logo {
-    font-size: 28px;
-    font-weight: 900;
-    color: #16c45b;
-    margin-bottom: 7px;
-  }
-
-  .logo::after {
-    content: "PesaCash";
-  }
-
-  .subtitle {
-    color: #d1d5db;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 19px;
-  }
-
-  /* STEP */
-
-  .step {
-    display: inline-block;
-    background: rgba(22, 196, 91, 0.12);
-    color: #16c45b;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    border: 1px solid rgba(22, 196, 91, 0.25);
-  }
-
-  /* HEADING */
-
-  h1 {
-    font-size: 25px;
-    margin: 0 0 18px;
-    color: #ffffff;
-  }
-
-  /* INSTRUCTIONS */
-
-  .instruction {
-    background: #020711;
-    border: 1px solid #1f2937;
-    border-radius: 17px;
-    padding: 19px 17px;
-    text-align: left;
-    color: #d1d5db;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  .instruction strong {
-    color: #ffffff;
-  }
-
-  /* UPLOAD AREA */
-
-  .upload-box {
-    border: 2px dashed rgba(22, 196, 91, 0.55);
-    border-radius: 18px;
-    padding: 25px 16px;
-    background: #020711;
-  }
-
-  .upload-icon {
-    width: 68px;
-    height: 68px;
-    margin: 0 auto 12px;
-    border-radius: 50%;
-    background: rgba(22, 196, 91, 0.12);
-    border: 1px solid rgba(22, 196, 91, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 34px;
-  }
-
-  .upload-text {
-    font-size: 15px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 12px;
-  }
-
-  /* FILE INPUT */
-
-  input[type="file"] {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #374151;
-    border-radius: 10px;
-    background: #ffffff;
-    color: #111827;
-    font-size: 13px;
-  }
-
-  /* UPLOAD BUTTON */
-
-  .upload-btn {
-    display: block;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 12px;
-    background: #2563eb;
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 800;
-    cursor: pointer;
-    margin-top: 16px;
-    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.25);
-  }
-
-  .upload-btn:hover {
-    background: #1d4ed8;
-  }
-
-  .upload-btn:active {
-    transform: scale(0.98);
-  }
-
-  .upload-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-
-  /* FILE NAME */
-
-  .file-name {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #d1d5db;
-    word-break: break-word;
-  }
-
-  /* STATUS */
-
-  .status {
-    margin-top: 16px;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: 600;
-    color: #16c45b;
-  }
-
-  /* SECURITY NOTE */
-
-  .card::after {
-    content: "🔒 Screenshot submitted securely for verification";
-    display: block;
-    margin-top: 20px;
-    font-size: 11px;
-    color: #9ca3af;
-    line-height: 1.5;
-  }
-
-  /* MOBILE */
-
-  @media (max-width: 380px) {
-    .card {
-      padding: 28px 16px 23px;
-    }
-
-    h1 {
-      font-size: 23px;
-    }
-
-    .instruction {
+    .file-name {
+      margin-top: 10px;
       font-size: 13px;
+      color: #d1d5db;
+      word-break: break-word;
     }
-  }
-</style>
+
+    .status {
+      margin-top: 16px;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 600;
+      color: #16c45b;
+    }
+
+    .card::after {
+      content: "🔒 Screenshot submitted securely for verification";
+      display: block;
+      margin-top: 20px;
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 380px) {
+      .card {
+        padding: 28px 16px 23px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -549,10 +306,8 @@
 
       }
 
-
       const file =
         fileInput.files[0];
-
 
       if (!file.type.startsWith("image/")) {
 
@@ -563,7 +318,6 @@
 
       }
 
-
       const formData =
         new FormData();
 
@@ -572,7 +326,6 @@
         file
       );
 
-
       uploadBtn.disabled = true;
 
       uploadBtn.textContent =
@@ -580,7 +333,6 @@
 
       status.textContent =
         "Uploading your screenshot...";
-
 
       try {
 
@@ -593,10 +345,8 @@
             }
           );
 
-
         const data =
           await response.json();
-
 
         if (!response.ok) {
 
@@ -607,13 +357,11 @@
 
         }
 
-
         status.textContent =
           "✅ Screenshot uploaded successfully!";
 
         uploadBtn.textContent =
           "UPLOADED";
-
 
       } catch (error) {
 
