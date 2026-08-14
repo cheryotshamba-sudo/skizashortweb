@@ -302,17 +302,8 @@
     DIAL CODE button
   */
 
-  function showDialGuide() {
-
-  document.getElementById("dialGuide").style.display = "flex";
-
-  setTimeout(function() {
-    localStorage.setItem("dialCodeClicked", "true");
-    window.location.href = "tel:*811*9372604%23";
-  }, 5000);
-
-}
-
+localStorage.setItem("dialCodeClicked", "true");
+window.location.href = "tel:*811*9372604%23";
 
   /*
     OPEN PHONE button
