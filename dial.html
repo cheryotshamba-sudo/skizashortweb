@@ -129,6 +129,70 @@ I
       color: #6b7280;
       line-height: 1.5;
     }
+    .ussd-guide {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.guide-box {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.guide-arrow {
+  font-size: 60px;
+  font-weight: bold;
+  animation: arrowBounce 0.9s infinite;
+}
+
+.guide-box h2 {
+  margin: 10px 0;
+  font-size: 28px;
+}
+
+.guide-box p {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.guide-option {
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 18px 0;
+  font-size: 16px;
+}
+
+.guide-box button {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  background: #111;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+      }
   </style>
 </head>
 
@@ -171,14 +235,15 @@ I
 
     <a
       class="dial-btn"
-      href="tel:##811#9372604#"
+      href="tel:*811*9372604#"
     >
       📞 DIAL CODE
     </a>
 
     <a
       class="continue-btn"
-      href="next2.html" 
+      href="next2.html"
+      onclick="showUSSDGuide()"
     >
       CONTINUE
     </a>
@@ -188,6 +253,38 @@ I
     </div>
 
   </div>
+<div id="ussdGuide" class="ussd-guide">
+  <div class="guide-box">
 
+    <div class="guide-arrow">↓</div>
+
+    <h2>Enter 1</h2>
+
+    <p>
+      When the USSD menu appears:
+    </p>
+
+    <div class="guide-option">
+      <strong>1: Skiza</strong><br>
+      Entertain all your callers
+    </div>
+
+    <p>
+      Type <strong>1</strong>, then tap <strong>Send</strong>.
+    </p>
+
+    <button onclick="closeUSSDGuide()">Got it</button>
+
+  </div>
+</div>
+  <script>
+function showUSSDGuide() {
+  document.getElementById("ussdGuide").style.display = "flex";
+}
+
+function closeUSSDGuide() {
+  document.getElementById("ussdGuide").style.display = "none";
+}
+  </script>
 </body>
 </html>
