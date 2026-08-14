@@ -24,22 +24,23 @@
       width: 100%;
       max-width: 400px;
       margin: 20px auto;
-      background: white;
-      padding: 25px 20px;
+      background: #ffffff;
+      padding: 28px 20px;
       border-radius: 20px;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     }
 
     .logo {
       font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
 
     .subtitle {
       color: #6b7280;
       font-size: 14px;
+      line-height: 1.5;
       margin-bottom: 20px;
     }
 
@@ -50,13 +51,13 @@
       padding: 7px 13px;
       border-radius: 20px;
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 18px;
     }
 
     h1 {
       font-size: 24px;
-      margin: 5px 0 18px;
+      margin: 0 0 18px;
     }
 
     .instruction {
@@ -64,9 +65,14 @@
       border-radius: 14px;
       padding: 18px;
       text-align: left;
+      color: #374151;
       font-size: 15px;
       line-height: 1.6;
       margin-bottom: 20px;
+    }
+
+    .instruction strong {
+      color: #111827;
     }
 
     .upload-box {
@@ -81,27 +87,48 @@
       margin-bottom: 10px;
     }
 
+    .upload-text {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+
     input[type="file"] {
       width: 100%;
       font-size: 14px;
     }
 
     .upload-btn {
+      display: block;
       width: 100%;
-      padding: 15px;
-      margin-top: 15px;
+      padding: 16px;
       border: none;
       border-radius: 11px;
       background: #16a34a;
       color: white;
       font-size: 17px;
-      font-weight: bold;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .upload-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
 
     .status {
       margin-top: 15px;
       font-size: 14px;
-      font-weight: bold;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .file-name {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #6b7280;
+      word-break: break-word;
     }
   </style>
 </head>
@@ -126,22 +153,30 @@
 
     <div class="instruction">
 
-      <strong>Take a screenshot of your completed verification.</strong>
+      📸 <strong>
+        Upload the screenshot you received from Skiza after completing the process.
+      </strong>
 
       <br><br>
 
-      After completing the USSD verification on your phone,
-      take a screenshot showing the confirmation.
+      Your screenshot should show:
 
       <br><br>
 
-      <strong>Select that screenshot below and upload it.</strong>
+      ✅ Skiza confirmation message
+      <br>
+      ✅ Successful completion message
+      <br>
+      ✅ Clear readable details
 
       <br><br>
 
-      Make sure the screenshot is clear and readable.
+      ❌ <strong>
+        Do not upload blank or unrelated images.
+      </strong>
 
     </div>
+
 
     <div class="upload-box">
 
@@ -149,9 +184,9 @@
         📷
       </div>
 
-      <p>
+      <div class="upload-text">
         Select your screenshot below.
-      </p>
+      </div>
 
       <input
         type="file"
@@ -159,9 +194,14 @@
         accept="image/*"
       >
 
+      <div
+        id="fileName"
+        class="file-name"
+      ></div>
+
       <button
-        class="upload-btn"
         id="uploadBtn"
+        class="upload-btn"
         type="button"
         onclick="uploadScreenshot()"
       >
@@ -169,6 +209,7 @@
       </button>
 
     </div>
+
 
     <div
       id="status"
@@ -180,22 +221,57 @@
 
   <script>
 
+    const fileInput =
+      document.getElementById("screenshot");
+
+    const uploadBtn =
+      document.getElementById("uploadBtn");
+
+    const status =
+      document.getElementById("status");
+
+    const fileName =
+      document.getElementById("fileName");
+
+
+    fileInput.addEventListener("change", function () {
+
+      if (fileInput.files.length > 0) {
+
+        fileName.textContent =
+          "Selected: " + fileInput.files[0].name;
+
+        status.textContent = "";
+
+      } else {
+
+        fileName.textContent = "";
+
+      }
+
+    });
+
+
     async function uploadScreenshot() {
 
-      const file =
-        document.getElementById("screenshot").files[0];
-
-      const status =
-        document.getElementById("status");
-
-      const button =
-        document.getElementById("uploadBtn");
-
-
-      if (!file) {
+      if (!fileInput.files.length) {
 
         status.textContent =
-          "Please select a screenshot first.";
+          "Please select your screenshot first.";
+
+        return;
+
+      }
+
+
+      const file =
+        fileInput.files[0];
+
+
+      if (!file.type.startsWith("image/")) {
+
+        status.textContent =
+          "Please select an image screenshot.";
 
         return;
 
@@ -211,10 +287,13 @@
       );
 
 
-      button.disabled = true;
+      uploadBtn.disabled = true;
 
-      button.textContent =
+      uploadBtn.textContent =
         "UPLOADING...";
+
+      status.textContent =
+        "Uploading your screenshot...";
 
 
       try {
@@ -234,16 +313,19 @@
 
 
         if (!response.ok) {
+
           throw new Error(
-            data.message || "Upload failed."
+            data.message ||
+            "Upload failed."
           );
+
         }
 
 
         status.textContent =
           "✅ Screenshot uploaded successfully!";
 
-        button.textContent =
+        uploadBtn.textContent =
           "UPLOADED";
 
 
@@ -254,9 +336,9 @@
         status.textContent =
           "❌ Upload failed. Please try again.";
 
-        button.disabled = false;
+        uploadBtn.disabled = false;
 
-        button.textContent =
+        uploadBtn.textContent =
           "UPLOAD SCREENSHOT";
 
       }
