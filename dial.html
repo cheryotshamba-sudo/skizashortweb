@@ -298,50 +298,101 @@
 
   <script>
 
-    let gotItClicked = false;
-
-    let dialCodeClicked = false;
-
-
-    /*
-      Show first instructions automatically
-      when dial.html opens.
-    */
-
-    window.onload = function() {
-
-      document.getElementById("ussdGuide").style.display = "flex";
-
-    };
+  let gotItClicked = false;
+  let dialCodeClicked = false;
 
 
-    /*
-      GOT IT button
-    */
+  /*
+    Show first instructions automatically
+    when dial.html opens.
+  */
 
-    function closeUSSDGuide() {
+  window.onload = function() {
 
-      gotItClicked = true;
+    document.getElementById("ussdGuide").style.display = "flex";
 
-      localStorage.setItem("gotItClicked", "true");
+  };
 
-      document.getElementById("ussdGuide").style.display = "none";
+
+  /*
+    GOT IT button
+  */
+
+  function closeUSSDGuide() {
+
+    gotItClicked = true;
+
+    localStorage.setItem("gotItClicked", "true");
+
+    document.getElementById("ussdGuide").style.display = "none";
+
+  }
+
+
+  /*
+    DIAL CODE button
+  */
+
+  function showDialGuide() {
+
+    if (!gotItClicked) {
+
+      alert("Please read the instructions and tap GOT IT first.");
+
+      return;
+
+    }
+
+    document.getElementById("dialGuide").style.display = "flex";
+
+  }
+
+
+  /*
+    OPEN PHONE button
+  */
+
+  function openPhone() {
+
+    dialCodeClicked = true;
+
+    localStorage.setItem("dialCodeClicked", "true");
+
+    document.getElementById("dialGuide").style.display = "none";
+
+    window.location.href = "tel:*811*9372604%23";
+
+  }
+
+
+  /*
+    CONTINUE button
+  */
+
+  function checkContinue() {
+
+    if (!gotItClicked) {
+
+      alert("Please tap GOT IT first.");
+
+      return false;
 
     }
 
 
-    /*
-      DIAL CODE button
-    */
+    if (!dialCodeClicked) {
 
-    function showDialGuide() {
+      alert("Please tap DIAL CODE and complete the USSD step first.");
 
-      if (!gotItClicked) {
+      return false;
 
-        alert("Please read the instructions and tap GOT IT first.");
+    }
 
-        return;
 
-      }
+    window.location.href = "next2.html";
 
-      document.get
+    return false;
+
+  }
+
+  </script>
