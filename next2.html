@@ -230,14 +230,30 @@
   /* FILE INPUT */
 
   input[type="file"] {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #374151;
-    border-radius: 10px;
-    background: #ffffff;
-    color: #111827;
-    font-size: 13px;
-  }
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  background: #111827;
+  color: #d1d5db;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #1d4ed8;
+} 
 
   /* BLUE BUTTON */
 
