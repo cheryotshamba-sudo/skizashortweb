@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Complete Verification</title>
-
-  <style>
+<style>
   * {
     box-sizing: border-box;
   }
@@ -17,85 +16,109 @@
     font-family: Arial, sans-serif;
     background: #111827;
     color: #ffffff;
+    padding: 18px 14px 35px;
   }
 
   .container {
     width: 100%;
-    max-width: 480px;
+    max-width: 410px;
     margin: auto;
-    padding: 25px 18px;
+    padding: 8px 0;
   }
+
+  /* TOP */
 
   .subtitle {
     text-align: center;
     color: #d1d5db;
-    font-size: 16px;
-    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 14px;
   }
 
   .step {
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 15px;
-    color: #16c45b;
+    display: table;
+    margin: 0 auto 18px;
+    padding: 9px 17px;
+    border-radius: 30px;
+    background: rgba(37, 99, 235, 0.14);
+    border: 1px solid rgba(37, 99, 235, 0.4);
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+  }
+
+  .step::before {
+    content: "✓ ";
   }
 
   h1 {
     text-align: center;
     font-size: 25px;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
     color: #ffffff;
   }
 
+  /* INSTRUCTIONS */
+
   .instructions {
     background: #0b1220;
-    border: 1px solid rgba(22, 196, 91, 0.12);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.30);
-    line-height: 1.6;
+    border: 1px solid #263244;
+    border-radius: 20px;
+    padding: 21px 18px;
+    line-height: 1.65;
     margin-bottom: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   }
 
   .instructions h2 {
-    font-size: 19px;
-    margin-top: 0;
+    font-size: 18px;
+    margin: 0 0 16px;
     color: #ffffff;
   }
 
   .step-item {
-    margin: 12px 0;
+    margin: 14px 0;
     color: #d1d5db;
+    font-size: 14px;
   }
 
   .step-item strong {
     color: #ffffff;
   }
 
+  /* BUTTONS */
+
   .dial-btn,
   .continue-btn {
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     border-radius: 12px;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 800;
     margin-top: 12px;
     border: none;
     cursor: pointer;
+    transition: 0.2s;
   }
 
   .dial-btn {
     background: #2563eb;
     color: #ffffff;
-    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.28);
   }
 
   .dial-btn:hover {
     background: #1d4ed8;
+  }
+
+  .dial-btn:active,
+  .continue-btn:active {
+    transform: scale(0.98);
   }
 
   .continue-btn {
@@ -108,20 +131,49 @@
   .continue-btn.enabled {
     opacity: 1;
     pointer-events: auto;
-    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 7px 20px rgba(37, 99, 235, 0.28);
   }
 
   .continue-btn.enabled:hover {
     background: #1d4ed8;
   }
 
+  /* NOTE */
+
   .note {
     text-align: center;
     color: #9ca3af;
-    font-size: 14px;
-    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 380px) {
+    .container {
+      padding: 5px 0;
+    }
+
+    h1 {
+      font-size: 23px;
+    }
+
+    .instructions {
+      padding: 19px 16px;
+    }
+
+    .step-item {
+      font-size: 13px;
+    }
+
+    .dial-btn,
+    .continue-btn {
+      font-size: 16px;
+    }
   }
 </style>
+  
 </head>
 
 <body>
