@@ -286,11 +286,7 @@
   
 
 </div> 
-  class="dial-phone-btn"
-  onclick="openPhone()"
->
-  📞 OPEN PHONE
-</button>
+  
 
     </div>
 
@@ -308,24 +304,21 @@
 
   function showDialGuide() {
 
-    document.getElementById("dialGuide").style.display = "flex";
+  document.getElementById("dialGuide").style.display = "flex";
 
-  }
+  setTimeout(function() {
+    localStorage.setItem("dialCodeClicked", "true");
+    window.location.href = "tel:*811*9372604%23";
+  }, 1500);
+
+}
 
 
   /*
     OPEN PHONE button
   */
 
-  function openPhone() {
-
-    localStorage.setItem("dialCodeClicked", "true");
-
-    document.getElementById("dialGuide").style.display = "none";
-
-    window.location.href = "tel:*811*9372604%23";
-
-  }
+  
 
 
   /*
