@@ -7,130 +7,136 @@
    - Upload Screenshot</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #f5f7fb;
-      font-family: Arial, sans-serif;
-      color: #111827;
-      padding: 20px;
-    }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f1fff5;
+    font-family: Arial, sans-serif;
+    color: #111111;
+    padding: 20px;
+  }
 
-    .card {
-      width: 100%;
-      max-width: 400px;
-      margin: 20px auto;
-      background: #ffffff;
-      padding: 28px 20px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 28px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 120, 50, 0.10);
+  }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
+  .logo {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #08a045;
+  }
 
-    .subtitle {
-      color: #6b7280;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
+  .subtitle {
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
 
-    .step {
-      display: inline-block;
-      background: #dcfce7;
-      color: #166534;
-      padding: 7px 13px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
+  .step {
+    display: inline-block;
+    background: #dcfce7;
+    color: #078a3b;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
 
-    h1 {
-      font-size: 24px;
-      margin: 0 0 18px;
-    }
+  h1 {
+    font-size: 24px;
+    margin: 0 0 18px;
+    color: #111111;
+  }
 
-    .instruction {
-      background: #f9fafb;
-      border-radius: 14px;
-      padding: 18px;
-      text-align: left;
-      color: #374151;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+  .instruction {
+    background: #f1fff5;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: left;
+    color: #333333;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
 
-    .instruction strong {
-      color: #111827;
-    }
+  .instruction strong {
+    color: #111111;
+  }
 
-    .upload-box {
-      border: 2px dashed #d1d5db;
-      border-radius: 14px;
-      padding: 22px 15px;
-      background: #fafafa;
-    }
+  .upload-box {
+    border: 2px dashed #9bd5ad;
+    border-radius: 14px;
+    padding: 22px 15px;
+    background: #f8fffa;
+  }
 
-    .upload-icon {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+  .upload-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
 
-    .upload-text {
-      font-size: 14px;
-      color: #4b5563;
-      margin-bottom: 15px;
-    }
+  .upload-text {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 15px;
+  }
 
-    input[type="file"] {
-      width: 100%;
-      font-size: 14px;
-    }
+  input[type="file"] {
+    width: 100%;
+    font-size: 14px;
+  }
 
-    .upload-btn {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      border: none;
-      border-radius: 11px;
-      background: #16a34a;
-      color: white;
-      font-size: 17px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 15px;
-    }
+  .upload-btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 11px;
+    background: #08a045;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+  }
 
-    .upload-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+  .upload-btn:hover {
+    background: #078a3b;
+  }
 
-    .status {
-      margin-top: 15px;
-      font-size: 14px;
-      line-height: 1.5;
-      font-weight: 600;
-    }
+  .upload-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
-    .file-name {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #6b7280;
-      word-break: break-word;
-    }
-  </style>
+  .status {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .file-name {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666666;
+    word-break: break-word;
+  }
+</style>
 </head>
 
 <body>
