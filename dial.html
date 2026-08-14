@@ -298,12 +298,18 @@
   let dialCodeClicked = false;
 
 
-  /*
-    DIAL CODE button
-  */
+ /*
+  DIAL CODE button
+*/
 
-localStorage.setItem("dialCodeClicked", "true");
-window.location.href = "tel:*811*9372604%23";
+function showDialGuide() {
+
+  localStorage.setItem("dialCodeClicked", "true");
+  window.location.href = "tel:*811*9372604%23";
+
+} 
+
+
 
   /*
     OPEN PHONE button
