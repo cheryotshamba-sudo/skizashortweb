@@ -216,7 +216,7 @@ body {
   border-bottom: 1px solid rgba(57, 255, 136, 0.10);
   font-size: 14px;
   line-height: 1.4;
-  color: #c4d1c9;
+  color: #ffffff; 
 }
 
 .comment:last-child {
