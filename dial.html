@@ -234,19 +234,20 @@ I
     
 
     <a
-      class="dial-btn"
-      href="tel:*811*9372604#"
-    >
-      📞 DIAL CODE
+  class="dial-btn"
+  href="tel:*811*9372604%23"
+  onclick="dialCodeClickedNow()"
+>
+  📞 DIAL CODE
     </a>
 
     <a
-      class="continue-btn"
-      href="next2.html"
-      onclick="showUSSDGuide()"
-    >
-      CONTINUE
-    </a>
+  class="continue-btn"
+  href="next2.html"
+  onclick="return checkContinue()"
+>
+  CONTINUE
+</a>
 
     <div class="note">
       Complete the USSD step before continuing.
