@@ -166,12 +166,13 @@
     <!-- CONTINUE -->
 
     <a
-      id="continueBtn"
-      class="continue-btn"
-      href="next2.html" 
-    >
-      CONTINUE
-    </a>
+  id="continueBtn"
+  class="continue-btn"
+  href="next2.html"
+  onclick="return checkContinue()"
+>
+  CONTINUE
+</a>
 
     <div class="note">
       Complete the USSD process before continuing.
@@ -191,19 +192,17 @@
         .classList.add("enabled");
 
     }
+function checkContinue() {
 
+  if (localStorage.getItem("dialCompleted") !== "true") {
+    alert("Please tap DIAL NOW first.");
+    return false;
+  }
 
-    window.addEventListener("pageshow", function() {
+  return true;
+    }
 
-      if (localStorage.getItem("dialCompleted") === "true") {
-
-        document
-          .getElementById("continueBtn")
-          .classList.add("enabled");
-
-      }
-
-    });
+    
 
   </script>
 
