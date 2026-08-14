@@ -14,61 +14,90 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background: #f1fff5;
+    background: linear-gradient(180deg, #eafff1 0%, #f7fff9 45%, #ffffff 100%);
     font-family: Arial, sans-serif;
     color: #111111;
-    padding: 20px;
+    padding: 20px 15px 35px;
   }
+
+  /* MAIN CARD */
 
   .card {
     width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
+    max-width: 410px;
+    margin: 10px auto;
     background: #ffffff;
-    padding: 28px 20px;
-    border-radius: 20px;
+    padding: 30px 20px 25px;
+    border-radius: 24px;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 120, 50, 0.10);
+    box-shadow: 0 12px 35px rgba(8, 160, 69, 0.12);
+    border: 1px solid #e3f5e9;
+    position: relative;
+    overflow: hidden;
   }
 
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #08a045;
+  }
+
+  /* LOGO */
+
   .logo {
-    font-size: 24px;
+    font-size: 27px;
     font-weight: 800;
-    margin-bottom: 8px;
     color: #08a045;
+    margin-bottom: 6px;
+  }
+
+  .logo::after {
+    content: "PesaCash";
   }
 
   .subtitle {
     color: #555555;
     font-size: 14px;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
+
+  /* STEP */
 
   .step {
     display: inline-block;
     background: #dcfce7;
     color: #078a3b;
-    padding: 7px 13px;
-    border-radius: 20px;
+    padding: 8px 15px;
+    border-radius: 30px;
     font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border: 1px solid #b8edca;
   }
 
+  /* HEADING */
+
   h1 {
-    font-size: 24px;
+    font-size: 25px;
     margin: 0 0 18px;
     color: #111111;
   }
 
+  /* INSTRUCTIONS */
+
   .instruction {
-    background: #f1fff5;
-    border-radius: 14px;
-    padding: 18px;
+    background: #f0fff5;
+    border: 1px solid #d8f3e1;
+    border-radius: 17px;
+    padding: 19px 17px;
     text-align: left;
     color: #333333;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
   }
@@ -77,64 +106,126 @@
     color: #111111;
   }
 
+  /* UPLOAD AREA */
+
   .upload-box {
-    border: 2px dashed #9bd5ad;
-    border-radius: 14px;
-    padding: 22px 15px;
-    background: #f8fffa;
+    border: 2px dashed #08a045;
+    border-radius: 18px;
+    padding: 25px 16px;
+    background: linear-gradient(
+      180deg,
+      #effff4 0%,
+      #ffffff 100%
+    );
   }
 
   .upload-icon {
-    font-size: 42px;
-    margin-bottom: 10px;
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
   }
 
   .upload-text {
-    font-size: 14px;
-    color: #555555;
-    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 12px;
   }
+
+  /* FILE INPUT */
 
   input[type="file"] {
     width: 100%;
-    font-size: 14px;
+    padding: 11px;
+    border: 1px solid #c7e8d2;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #444444;
+    font-size: 13px;
   }
+
+  /* UPLOAD BUTTON */
 
   .upload-btn {
     display: block;
     width: 100%;
     padding: 16px;
     border: none;
-    border-radius: 11px;
+    border-radius: 12px;
     background: #08a045;
     color: #ffffff;
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 16px;
+    box-shadow: 0 6px 15px rgba(8, 160, 69, 0.22);
   }
 
   .upload-btn:hover {
     background: #078a3b;
   }
 
+  .upload-btn:active {
+    transform: scale(0.98);
+  }
+
   .upload-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    box-shadow: none;
   }
 
+  /* FILE NAME */
+
+  .file-name {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555555;
+    word-break: break-word;
+  }
+
+  /* STATUS */
+
   .status {
-    margin-top: 15px;
+    margin-top: 16px;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 14px;
     line-height: 1.5;
     font-weight: 600;
   }
 
-  .file-name {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #666666;
-    word-break: break-word;
+  /* SMALL FOOTER NOTE */
+
+  .card::after {
+    content: "🔒 Your screenshot is securely submitted for verification";
+    display: block;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #777777;
+    line-height: 1.5;
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 380px) {
+    .card {
+      padding: 28px 16px 23px;
+    }
+
+    h1 {
+      font-size: 23px;
+    }
+
+    .instruction {
+      font-size: 13px;
+    }
   }
 </style>
 </head>
