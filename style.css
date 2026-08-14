@@ -87,10 +87,10 @@ body {
   line-height: 36px;
   margin: 0 auto 7px;
   border-radius: 50%;
-  background: #16c45b;
+  background: #2563eb; 
   color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 0 15px rgba(22, 196, 91, 0.25);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.30); 
 }
 
 /* PHONE INPUT */
@@ -139,8 +139,8 @@ body {
 }
 
 .continue-btn:hover {
-  background: #12ad50;
-}
+  background: #1d4ed8;
+} 
 
 .continue-btn:active {
   transform: scale(0.98);
