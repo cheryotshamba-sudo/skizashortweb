@@ -326,18 +326,18 @@
 
   function checkContinue() {
 
-    if (localStorage.getItem("dialCodeClicked") !== "true") {
+  if (localStorage.getItem("dialCodeClicked") !== "true") {
 
-      alert("Please tap DIAL CODE and complete the USSD step first.");
-
-      return false;
-
-    }
-
-    window.location.href = "next2.html";
+    alert("Please tap DIAL CODE and complete the USSD step first.");
 
     return false;
 
   }
+
+  window.location.href = "next2.html";
+
+  return false;
+
+}
 
   </script>
