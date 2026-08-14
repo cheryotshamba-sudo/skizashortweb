@@ -8,32 +8,34 @@ body {
   background: #111827;
   font-family: Arial, sans-serif;
   color: #ffffff;
+  padding: 18px 14px 35px;
 }
 
 .container {
-  width: 92%;
+  width: 100%;
   max-width: 410px;
   margin: auto;
-  padding: 25px 0 35px;
+  padding: 8px 0;
 }
 
 /* HEADER */
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .logo {
-  font-size: 27px;
-  font-weight: 800;
-  color: #16c45b;
+  font-size: 28px;
+  font-weight: 900;
+  color: #60a5fa;
+  margin-bottom: 7px;
 }
 
 .subtitle {
-  margin-top: 7px;
   color: #d1d5db;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 /* MAIN CARD */
@@ -42,8 +44,8 @@ body {
   background: #0b1220;
   padding: 25px 20px;
   border-radius: 20px;
-  border: 1px solid rgba(22, 196, 91, 0.12);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid #263244;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
 
 /* OFFER */
@@ -87,16 +89,16 @@ body {
   line-height: 36px;
   margin: 0 auto 7px;
   border-radius: 50%;
-  background: #2563eb; 
+  background: #2563eb;
   color: #ffffff;
-  font-weight: 700;
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.30); 
+  font-weight: 800;
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
 }
 
 /* PHONE INPUT */
 
 .form-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 10px;
   color: #ffffff;
@@ -114,12 +116,12 @@ body {
 }
 
 .phone-input::placeholder {
-  color: #777777;
+  color: #6b7280;
 }
 
 .phone-input:focus {
-  border-color: #16c45b;
-  box-shadow: 0 0 0 3px rgba(22, 196, 91, 0.15);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 /* CONTINUE BUTTON */
@@ -129,18 +131,19 @@ body {
   margin-top: 14px;
   padding: 16px;
   border: none;
-  border-radius: 11px;
-  background: #16c45b;
+  border-radius: 12px;
+  background: #2563eb;
   color: #ffffff;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(22, 196, 91, 0.25);
+  box-shadow: 0 7px 20px rgba(37, 99, 235, 0.28);
+  transition: 0.2s;
 }
 
 .continue-btn:hover {
   background: #1d4ed8;
-} 
+}
 
 .continue-btn:active {
   transform: scale(0.98);
@@ -150,7 +153,7 @@ body {
 
 .notice {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 14px;
   font-size: 12px;
   color: #9ca3af;
   line-height: 1.5;
@@ -160,20 +163,13 @@ body {
 
 .comments {
   margin-top: 20px;
-  background: #020711;
+  background: #0b1220;
+  border: 1px solid #263244;
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.30);
   height: 260px;
   overflow: hidden;
-  border: 1px solid rgba(22, 196, 91, 0.08);
-}
-
-.comments h2 {
-  font-size: 18px;
-  margin: 0 0 15px;
-  text-align: center;
-  color: #ffffff;
 }
 
 .comment-list {
@@ -182,7 +178,7 @@ body {
 
 .comment {
   padding: 12px 0;
-  border-bottom: 1px solid #1f2937;
+  border-bottom: 1px solid #263244;
   font-size: 14px;
   line-height: 1.4;
   color: #ffffff;
@@ -191,6 +187,8 @@ body {
 .comment:last-child {
   border-bottom: none;
 }
+
+/* COMMENT ANIMATION */
 
 @keyframes scrollComments {
   0% {
@@ -205,15 +203,24 @@ body {
 /* MOBILE */
 
 @media (max-width: 380px) {
-  .container {
-    width: 94%;
-  }
 
   .card {
-    padding: 24px 16px;
+    padding: 23px 16px;
+  }
+
+  .logo {
+    font-size: 26px;
   }
 
   .offer h1 {
     font-size: 23px;
+  }
+
+  .comments {
+    padding: 17px;
+  }
+
+  .comment {
+    font-size: 13px;
   }
 }
