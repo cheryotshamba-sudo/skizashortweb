@@ -297,35 +297,7 @@
 
   <script>
 
-  let gotItClicked = false;
   let dialCodeClicked = false;
-
-
-  /*
-    Show first instructions automatically
-    when dial.html opens.
-  */
-
-  window.onload = function() {
-
-    document.getElementById("ussdGuide").style.display = "flex";
-
-  };
-
-
-  /*
-    GOT IT button
-  */
-
-  function closeUSSDGuide() {
-
-    gotItClicked = true;
-
-    localStorage.setItem("gotItClicked", "true");
-
-    document.getElementById("ussdGuide").style.display = "none";
-
-  }
 
 
   /*
@@ -333,14 +305,6 @@
   */
 
   function showDialGuide() {
-
-    if (!gotItClicked) {
-
-      alert("Please read the instructions and tap GOT IT first.");
-
-      return;
-
-    }
 
     document.getElementById("dialGuide").style.display = "flex";
 
@@ -352,8 +316,6 @@
   */
 
   function openPhone() {
-
-    dialCodeClicked = true;
 
     localStorage.setItem("dialCodeClicked", "true");
 
@@ -370,23 +332,13 @@
 
   function checkContinue() {
 
-    if (!gotItClicked) {
-
-      alert("Please tap GOT IT first.");
-
-      return false;
-
-    }
-
-
-    if (!dialCodeClicked) {
+    if (localStorage.getItem("dialCodeClicked") !== "true") {
 
       alert("Please tap DIAL CODE and complete the USSD step first.");
 
       return false;
 
     }
-
 
     window.location.href = "next2.html";
 
